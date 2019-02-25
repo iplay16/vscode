@@ -4,7 +4,12 @@
 #include<stdlib.h>
 #include<list>
 #include<queue>
+#include<set>
 using namespace std;
+
+typedef struct AdjMatrix{
+    int cost;
+}AdjMatrix;
 
 typedef struct GeneralEdge{
     int fromvertex;
@@ -16,6 +21,17 @@ typedef struct Edge{
     int nextNode;
     int cost;
 }Edge;
+
+int Tree[10];
+int findRoot(int x){
+    if(Tree[x]==-1) 
+        return x;
+    else {
+        int root=findRoot(Tree[x]);
+        Tree[x]=root; //x直接指向根
+        return root;
+    }
+}
 
 typedef  struct adjGraph{
     vector<Edge*> *vertexnode;//顶点数组
@@ -153,10 +169,74 @@ void GraphBFSTaverse(){
 }
 
 void shortestDistance(){
-    
+    int vertexnum=0;
+    printf("input vertexnum:");
+    scanf("%d",&vertexnum);
+    int fromvertex=-1,tovertex=-1,inputcost=-1;
+    AdjMatrix m[7][7];
+    //初始化距离无穷大
+    for(int i=0;i<vertexnum;i++){
+        for(int j=0;j<vertexnum;j++){
+            m[i][j].cost=-1;
+        }
+    }
+    printf("input edges,format is:fromvertex tovertex cost\n");
+    while(scanf("%d%d%d",&fromvertex,&tovertex,&inputcost)!=EOF){
+        m[fromvertex][tovertex].cost=inputcost;
+    }
+
+    for(int i=0;i<vertexnum;i++){//打印矩阵
+        printf("\n");
+        for(int j=0;j<vertexnum;j++){
+            printf("%d ",m[i][j].cost);
+        }
+    }
+
+    int vset[10]={0};//0代表该顶点未加入,1代表该顶点已加入
+    int vx;
+    int tempdistance;
+    int v0distance[7]={-1};
+    v0distance[0]=0;
+    for(int i=1;i<vertexnum;i++){
+        v0distance[i]=m[0][i].cost;
+    }
+    //贪心算法加入顶点
+    for(int i=1;i<vertexnum;i++){//i表示躺数,并未在for循环里面用到
+        //debug
+        for(int u=0;u<vertexnum;u++){
+            printf("v%d=%d,",u,v0distance[u]);
+        }
+        printf("\n");
+        for(int j=1,min=1000;j<vertexnum;j++){//从v0distance中选出最小距离的顶点和最小距离
+            if(v0distance[j]==-1||vset[j]==1)//跳过无穷大距离和已加入vset的顶点
+                continue;
+            if(v0distance[j]<min){
+                min=v0distance[j];
+                vx=j;
+            }
+        }
+        vset[vx]=1;//加入该顶点
+        //计算v0->vmin->vk的距离
+        //其中v0->vmin的最短距离保存在之前的v0distance里
+        for(int k=1;k<vertexnum;k++){//计算通过minv的顶点后的距离,如果比原来小则进行松弛
+             if(m[vx][k].cost==-1){//跳过无穷大点 
+                continue;
+            }else{
+                tempdistance=v0distance[vx]+m[vx][k].cost;
+                //松弛
+                if(v0distance[k]==-1){
+                    v0distance[k]=tempdistance;
+                }else{
+                    v0distance[k]=v0distance[k]<tempdistance?v0distance[k]:tempdistance;
+                }
+            }
+        }
+    }
+
+
 }
 
 int main(){
-    GraphDFSTraverse();
+    shortestDistance();
     exit(0);
 }
