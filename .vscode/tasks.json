@@ -1,0 +1,21 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+
+    //  tree.cpp 
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "clang++",
+            "command": "g++ -Wall  -g tree.cpp sqList.cpp ${file} -o ${fileBasenameNoExtension}.exe",
+            "type": "shell",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}

@@ -151,6 +151,11 @@ void GraphBFSTaverse(){
     }
     GraphBFS(g);
 }
+
+void shortestDistance(){
+    
+}
+
 int main(){
     GraphDFSTraverse();
     exit(0);
