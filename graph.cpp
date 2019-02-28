@@ -223,6 +223,7 @@ void shortestDistance(){
                 continue;
             }else{
                 tempdistance=v0distance[vx]+m[vx][k].cost;
+                
                 //松弛
                 if(v0distance[k]==-1){
                     v0distance[k]=tempdistance;
@@ -237,6 +238,6 @@ void shortestDistance(){
 }
 
 int main(){
-    shortestDistance();
+    GraphDFSTraverse();
     exit(0);
 }
