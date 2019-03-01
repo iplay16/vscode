@@ -171,30 +171,49 @@ int lengthOfLongestSubstring(char* s){
         len++;
     }
 
-    int count=0;
+    if(len==0){
+        return 0;
+    }
+
+    if(len==1){
+        return 1;
+    }
+
+    int count=1;
     int lastmaxlen=1;
     int dindex=-1;//标记重复位置
+    int dflag=0;
+
+
 
     for(int i=1;i<len;i++){
+        dflag=0;
         for(int j=dindex+1;j<i;j++){//判断是否重复
             if(s[i]==s[j]){//重复了
-                dindex=i;//标记preindex
+                dflag=1;
+                dindex=j;//标记preindex
                 lastmaxlen=count>lastmaxlen?count:lastmaxlen;
-                count=0;//清零重新计数
+                count=i-dindex;//清零重新计数
                 break;
             }
+        }
+        if(dflag==1){//如果重复
+            continue;//在之前代码已进行处理,此处continue
+        }else{
             count++;
         }
     }
+    lastmaxlen=count>lastmaxlen?count:lastmaxlen;
     return lastmaxlen;
 }
 
 void test_lengthOfLongestSubstring(){
-    char *s="abcabcbb";
+    char *s="dvdf";
     int a=lengthOfLongestSubstring(s);
     printf("%d",a);
 }
 
 int main(){
     test_lengthOfLongestSubstring();
+
 }
