@@ -1,9 +1,6 @@
 {
 	"folders": [
 		{
-			"path": "."
-		},
-		{
 			"path": "E:\\code\\pythonworkspace"
 		}
 	],
@@ -13,6 +10,7 @@
 			"vector": "cpp",
 			"deque": "cpp",
 			"ostream": "cpp"
-		}
+		},
+		"editor.fontSize": 12
 	}
 }
