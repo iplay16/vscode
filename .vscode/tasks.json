@@ -7,7 +7,7 @@
     "tasks": [
         {
             "label": "clang++",
-            "command": "g++ -Wall  -g tree.cpp sqList.cpp ${file} -o ${fileBasenameNoExtension}.exe",
+            "command": "g++ -Wall -std=c++11 -g tree.cpp sqList.cpp ${file} -o f:\\temp\\${fileBasenameNoExtension}.exe",
             "type": "shell",
             "group": {
                 "kind": "build",

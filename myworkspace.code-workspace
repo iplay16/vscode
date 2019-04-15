@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "E:\\code\\pythonworkspace"
+			"path": "."
 		}
 	],
 	"settings": {
@@ -9,7 +9,27 @@
 			"algorithm": "cpp",
 			"vector": "cpp",
 			"deque": "cpp",
-			"ostream": "cpp"
+			"ostream": "cpp",
+			"iostream": "cpp",
+			"*.tcc": "cpp",
+			"cctype": "cpp",
+			"clocale": "cpp",
+			"cstddef": "cpp",
+			"cstdio": "cpp",
+			"cstdlib": "cpp",
+			"cstring": "cpp",
+			"ctime": "cpp",
+			"cwchar": "cpp",
+			"cwctype": "cpp",
+			"exception": "cpp",
+			"iosfwd": "cpp",
+			"istream": "cpp",
+			"limits": "cpp",
+			"memory": "cpp",
+			"new": "cpp",
+			"streambuf": "cpp",
+			"typeinfo": "cpp",
+			"hash_map": "cpp"
 		},
 		"editor.fontSize": 12
 	}
