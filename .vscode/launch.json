@@ -3,8 +3,14 @@
     "configurations": [
         
         {
+            "name": "Python: Terminal (external)",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        },
+        {
             "name": "(gdb) Launch",
-           
             "type": "cppdbg",
             "request": "launch",
             "program": "f:/temp/${fileBasenameNoExtension}.exe",
@@ -23,6 +29,5 @@
                 }
             ]
         }
-       
     ]
 }
