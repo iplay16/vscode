@@ -1,7 +1,7 @@
 [TOC]
 
 #### 线性代数 Linear Algebra with Application
-page 
+看到第5张正交 
 
 ##### 求逆
 inv()
