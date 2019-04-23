@@ -1,1 +1,1 @@
-a=[1,2]
+[X,Y,c]=textread('E:\code\vsworkspace\machinelearninginaction\Ch05\testSet.txt','%f%f%d','delimiter','\t');

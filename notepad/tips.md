@@ -9,7 +9,7 @@ it is also needed to backup
 crl+shit+v
 
 #### python2to3
-D:\Python>python C:\Python33\Tools\Scripts\2to3.py -w 2to3Test.py
+C:\Users\lxw>python "D:\Program Files\Python37\Tools\Scripts\2to3.py" -w E:\code\vsworkspace\
 
 #### quickopen
 ctrl+p
