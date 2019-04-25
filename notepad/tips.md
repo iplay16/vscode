@@ -9,10 +9,18 @@ it is also needed to backup
 crl+shit+v
 
 #### python2to3
-C:\Users\lxw>python "D:\Program Files\Python37\Tools\Scripts\2to3.py" -w E:\code\vsworkspace\
+python "D:\Program Files\Python37\Tools\Scripts\2to3.py" -w E:\code\vsworkspace\
 
 #### quickopen
 ctrl+p
 
 #### md5
 CertUtil -hashfile C:\xxx.tar MD5
+
+##### vscode插件推荐
+AREPL
+bookmark
+gitignore
+todo hilight
+faker
+

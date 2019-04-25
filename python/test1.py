@@ -36,13 +36,24 @@ def bayTest():
     trainMat=[]
     for postinDoc in listOPosts:
         trainMat.append(bayes.setOfWords2Vec(myVocabList,postinDoc))
-        logging.debug(bayes.setOfWords2Vec(myVocabList,postinDoc))
-    logging.debug(trainMat)
-    logging.debug(trainMat[0])
-# bayTest()
+    p0,p1,pAb=bayes.trainNB0(trainMat,listClasses)
+    print(p0)
+    print(p1)
+
 #bookmark
 def chap05logic():
     dataArr,labelMat=logRegres.loadDataSet()
     m=logRegres.gradAscent(dataArr,labelMat)
-chap05logic()
+# chap05logic()
 
+def regressionTest():
+    xArr,yArr=regression.loadDataSet(MLpath+'\\Ch08\\ex0.txt')
+    ws=regression.standRegres(xArr,yArr)
+
+from machinelearninginaction.Ch07 import adaboost
+# datMat,classLabels=adaboost.loadSimpData()
+# D=np.mat(np.ones((5,1))/5)
+# b=adaboost.adaBoostTrainDS(datMat,classLabels,9)
+bayTest()
+#%% print("hello jupyter")
+#%% a=2
