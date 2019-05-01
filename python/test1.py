@@ -54,6 +54,8 @@ from machinelearninginaction.Ch07 import adaboost
 # datMat,classLabels=adaboost.loadSimpData()
 # D=np.mat(np.ones((5,1))/5)
 # b=adaboost.adaBoostTrainDS(datMat,classLabels,9)
-bayTest()
-#%% print("hello jupyter")
-#%% a=2
+import pdb
+a=1
+b=2
+pdb.set_trace()
+c=3

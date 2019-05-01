@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js">
+
+    </script>
+    <script src='heroscript.js'></script>
+
+
+    <h1>我的第一个标题</h1>
+    <div id='d1' style="color:#00FF00">
+        <p id='p1'>我的第一个段落。</p>
+        <p>我的第二个段落。</p>
+    </div>
+
+    <button id='b1'>b1</button>
+    <button id='b2'>get</button>
+    <script id='script1'>
+        var b1 = $('#b1');
+        var d1 = $('#d1');
+        console.log("load");
+        b1.click(function () {
+            d1.css("color", "red");
+            console.log("b1.click");
+        }
+        );
+    </script>
+
+    <script id='script2'>
+        var b2ofget = $('#b2');
+        console.log("load b2");
+        function getpage() {
+            // var page = $.get('/pythoncgi/myjson.py', {
+            //     dataType: 'json'
+            var pagestatus = $.ajax({
+                url: '/pythoncgi/myjson.py',
+                dataType: 'json',
+                success: function (data) {
+                    // var jstring = JSON.stringify(data);
+                    for (o in data) {
+                        alert(data[o]);
+                    }
+                    $('#p1').text(JSON.stringify(data));
+                },
+                error: function (data) {
+                    alert(data.status);
+                }
+            });
+
+            //             page.done(function(data){
+            //                 var jstring=JSON.stringify(data);
+            //                 for (o in data){
+            // 　　　            alert(data[o]); 
+
+            //     }
+            //     $('#p1').text(jstring);
+            // });
+
+            // console.log(page.status.text);
+            // $('#p1').text(page.responseText)
+            //change p1
+
+        }
+        b2ofget.click(function (){
+            getpage();
+            console.log("click b2");
+        });
+    </script>
+    <ul>
+        <li data-animal-type="鸟类">喜鹊</li>
+        <li data-animal-type="鱼类">金枪鱼</li>
+        <li data-animal-type="蜘蛛">蝇虎</li>
+    </ul>
+    <form action="demo_form.asp" method="get" autocomplete="on">
+        First name: <input type="text" name="fname" /><br />
+        Last name: <input type="text" name="lname" /><br />
+        E-mail: <input type="email" name="email" autocomplete="off" /><br />
+        <input type="submit" />
+    </form>
+    <script src='heroscript.js'></script>
+</body>
+
+</html>
