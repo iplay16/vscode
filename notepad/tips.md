@@ -282,3 +282,10 @@ https://www.jianshu.com/p/10cdbb35ac87
             }
         });
 ```
+
+##### 使用异常处理和条件语句nonetype
+以数据库连接为例,pymysql返回nonetype,并没有抛出异常,所以可以不用写try except语句而直接判断not conn,错误直接退出即可,避免nonetype传入其他函数中执行close()导致异常,经验:对于nonetype要就地处理,不可传入其他函数
+
+##### with语句
+with语句并非直接放回,而是执行__enter__()和__exit__()后返回的
+所以实际上有些包不能采用该方式,比如pymysql,使用with会返回cursor而不会返回connection造成无法使用close()函数
