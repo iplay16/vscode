@@ -12,7 +12,7 @@ def conprimlist(num):
     return primlist
 def factorize(num):
     primlist=conprimlist(num)
-    faclist=[]
+    faclist=[] 
     while(num!=1):
         for x in primlist:
             if num%x==0:
