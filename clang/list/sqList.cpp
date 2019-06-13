@@ -1,3 +1,5 @@
+#include<stdlib.h>
+#include<stdio.h>
 #include "sqList.h"
 ListNode *createListNode(int val){
     ListNode *p=(ListNode *)malloc(sizeof(ListNode));

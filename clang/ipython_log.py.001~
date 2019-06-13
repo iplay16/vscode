@@ -1,0 +1,1360 @@
+# IPython log file
+
+#%%
+from machinelearninginaction.Ch05 import logRegres
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+import time
+import numpy as np 
+from machinelearninginaction.Ch05 import logRegres
+dataArr,labelMat=logRegres.loadDataSet()
+dataArr=np.array(dataArr)
+num=len(labelMat)
+labelMat=np.array(labelMat).reshape(num,1)
+weights=np.ones((1,3))
+err=10
+step=0.001
+# while(np.linalg.norm(err)>1.5):
+cycle=400000
+for k in range(cycle):
+    # 第0轴沿着行的垂直往下，第1轴沿着列的方向水平延伸。
+    h=logRegres.sigmoid(np.sum(weights*dataArr,axis=1))
+    h=h.reshape(num,1)
+    err=labelMat-h
+    weights=weights+step*np.sum(np.multiply(err,dataArr),axis=0)
+print(np.linalg.norm(err))
+weights
+#%%
+import time
+import numpy as np 
+from machinelearninginaction.Ch05 import logRegres
+dataArr,labelMat=logRegres.loadDataSet()
+dataArr=np.array(dataArr)
+num=len(labelMat)
+labelMat=np.array(labelMat).reshape(num,1)
+weights=np.ones((1,3))
+err=10
+step=0.001
+# while(np.linalg.norm(err)>1.5):
+cycle=600000
+for k in range(cycle):
+    # 第0轴沿着行的垂直往下，第1轴沿着列的方向水平延伸。
+    h=logRegres.sigmoid(np.sum(weights*dataArr,axis=1))
+    h=h.reshape(num,1)
+    err=labelMat-h
+    weights=weights+step*np.sum(np.multiply(err,dataArr),axis=0)
+print(np.linalg.norm(err))
+weights
+#%%
+a = np.array([1, 2, 3])
+b = np.array([1, 2, 3])
+c = a.dot(b)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([1, 2, 3])
+b = np.array([1, 2, 3])
+a.dot(b)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([1, 2, 3],[4,5,6],[7,8,9])
+b = np.array([1, 2, 3])
+a.dot(b)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+a.dot(b)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+b.dot(a)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+b.dot(a)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+np.dot(a,b)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+np.dot(b,a)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+# np.dot(b,a)
+np.sum(a*b,axis=0)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+# np.dot(b,a)
+np.sum(a.T*b,axis=0)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+# np.dot(b,a)
+np.sum(a*b.T,axis=0)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+#%%
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.set(xlim=[0.5, 4.5], ylim=[-2, 8], title='An Example Axes',
+       ylabel='Y-Axis', xlabel='X-Axis')
+plt.show()
+#%%
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(121)
+ax.set(xlim=[0.5, 4.5], ylim=[-2, 8], title='An Example Axes',
+       ylabel='Y-Axis', xlabel='X-Axis')
+plt.show()
+#%%
+import matplotlib.pyplot as plt
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.set(xlim=[0.5, 4.5], ylim=[-2, 8], title='An Example Axes',
+       ylabel='Y-Axis', xlabel='X-Axis')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(datMat[:0], datMat[:1], color='red', marker='+')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat[:0]
+# plt.scatter(datMat[:0], datMat[:1], color='red', marker='+')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat[:0]
+# plt.scatter(datMat[:0], datMat[:1], color='red', marker='+')
+# plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:0], datMat[:1], color='red', marker='+')
+# plt.show()
+#%%
+i = np.matrix('1,2;3,4') 
+print(i[2])
+#%%
+i = np.matrix('1,2;3,4') 
+print(i[1])
+#%%
+i = np.matrix('1,2;3,4') 
+print(i)
+print(i[1])
+#%%
+i = np.matrix('1,2;3,4') 
+print(i)
+print(i[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# datMat
+plt.scatter(datMat[:,0], datMat[:,1], color='red', marker='+')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# datMat
+plt.scatter(datMat[:,1], datMat[:,2], color='red', marker='+')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+plt.scatter(datMat[:,1], datMat[:,2], color='red', marker='+')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+plt.scatter(datMat[:,0], datMat[:,1], color='red', marker='+')
+plt.show()
+plt.pyplot()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+plt.scatter(datMat[:,0], datMat[:,1], color='red')
+plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+print(datMat[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+plt.scatter(datMat[:,0],datMat[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+np.array(datMat[:,0]).shape
+# plt.scatter(,datMat[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+np.squeeze(np.array(datMat[:,0])).shape
+# plt.scatter(,datMat[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+np.squeeze(np.array(datMat[:,0]))
+# plt.scatter(,datMat[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+x=np.squeeze(np.array(datMat[:,0]))
+y=np.squeeze(np.array(datMat[:,1]))
+# plt.scatter(,datMat[:,1])
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+x=np.squeeze(np.array(datMat[:,0]))
+y=np.squeeze(np.array(datMat[:,1]))
+plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+datMat[:,0]
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# x=np.squeeze(np.array(datMat[:,0]))
+# y=np.squeeze(np.array(datMat[:,1]))
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+np.array(datMat[:,0])
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# x=np.squeeze(np.array(datMat[:,0]))
+# y=np.squeeze(np.array(datMat[:,1]))
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+np.array(datMat[:,0]).shape
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# x=np.squeeze(np.array(datMat[:,0]))
+# y=np.squeeze(np.array(datMat[:,1]))
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]))
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# x=np.squeeze(np.array(datMat[:,0]))
+# y=np.squeeze(np.array(datMat[:,1]))
+# plt.scatter(x, y, color='red')
+#%%
+import numpy as np
+#%%
+a=np.array([[1,2],[3,4]])
+
+a*b
+#%%
+c=np.array([[4, 3], [2, 1]])
+for xi in c:
+    print(xi)
+#%%
+for xi in xmatrix
+    error=yi-weight*xi
+    weight=weight+step*xi*error
+#%%
+import time
+import numpy as np 
+from machinelearninginaction.Ch05 import logRegres
+dataArr,labelMat=logRegres.loadDataSet()
+dataArr=np.array(dataArr)
+num=len(labelMat)
+labelMat=np.array(labelMat).reshape(num,1)
+weights=np.ones((1,3))
+err=10
+step=0.001
+# while(np.linalg.norm(err)>1.5):
+cycle=600000
+for k in range(cycle):
+    # 第0轴沿着行的垂直往下，第1轴沿着列的方向水平延伸。
+    h=logRegres.sigmoid(np.sum(weights*dataArr,axis=1))
+    h=h.reshape(num,1)
+    err=labelMat-h
+    weights=weights+step*np.sum(np.multiply(err,dataArr),axis=0)
+print(np.linalg.norm(err))
+weights
+#%%
+a=np.array([[4,5,6],[7,8,9],[11,12,13]])
+b=np.array([[1],[2],[3]])
+np.multiply(a,b)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+# np.dot(b,a)
+np.sum(a*b.T,axis=0)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),15*classLabels,15*classLabels)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),15*classLabels,15*classLabels)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array(15*classLabels),np.array(15*classLabels)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array(15*classLabels),np.array(15*classLabels))
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+classLabels
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+1)*15,np.(array(classLabels)+1)*15)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+1)*15,np.(array(classLabels)+1)*15))
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+1)*15,(np.array(classLabels)+1)*15)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+np.array(classLabels)
+#%%
+import numpy as np
+#%%
+a=np.array([[1,2],[3,4]])
+
+a*b
+#%%
+c=np.array([[4, 3], [2, 1]])
+for xi in c:
+    print(xi)
+#%%
+for xi in xmatrix
+    error=yi-weight*xi
+    weight=weight+step*xi*error
+#%%
+import time
+import numpy as np 
+from machinelearninginaction.Ch05 import logRegres
+dataArr,labelMat=logRegres.loadDataSet()
+dataArr=np.array(dataArr)
+num=len(labelMat)
+labelMat=np.array(labelMat).reshape(num,1)
+weights=np.ones((1,3))
+err=10
+step=0.001
+# while(np.linalg.norm(err)>1.5):
+cycle=600000
+for k in range(cycle):
+    # 第0轴沿着行的垂直往下，第1轴沿着列的方向水平延伸。
+    h=logRegres.sigmoid(np.sum(weights*dataArr,axis=1))
+    h=h.reshape(num,1)
+    err=labelMat-h
+    weights=weights+step*np.sum(np.multiply(err,dataArr),axis=0)
+print(np.linalg.norm(err))
+weights
+#%%
+a=np.array([[4,5,6],[7,8,9],[11,12,13]])
+b=np.array([[1],[2],[3]])
+np.multiply(a,b)
+#%%
+from machinelearninginaction.Ch05 import logRegres
+import imp
+imp.reload(logRegres)
+dataArr,labelMat=logRegres.loadDataSet()
+logRegres.gradAscent(dataArr,labelMat)
+#%%
+a = np.array([[1, 2, 3],[4,5,6],[7,8,9]])
+b = np.array([[1, 2, 3]])
+print(a)
+print(b)
+# np.dot(b,a)
+np.sum(a*b.T,axis=0)
+# ;print(c);print(c.shape);print(type(c))
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+plt.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+1)*15,(np.array(classLabels)+1)*15)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+1)*15,(np.array(classLabels)+1)*15)
+
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+(np.array(classLabels)+1)*15
+datMat[:,0]
+#%%
+from machinelearninginaction.Ch02 import kNN
+kNN.file2matrix('datingTestSet.txt')
+#%%
+from machinelearninginaction.Ch02 import kNN
+kNN.file2matrix('datingTestSet.txt')
+#%%
+from machinelearninginaction.Ch02 import kNN
+kNN.file2matrix('datingTestSet.txt')
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet.txt')
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dd[:,1],dl[:,2],15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dd[:,1],dl[:,2],15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dd[:,1],dl[:,2])
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dd[:,1],dd[:,2],,15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+array(dl)
+np.array(dl)
+np.array(classLabels)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+2)*15,(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+np.array(classLabels)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),,(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+2)*15,(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+2)*15,(np.array(classLabels)+2)*5)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),(np.array(classLabels)+2)*15,(np.array(classLabels)+2)*35)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+np.array(datMat[:,1])
+(np.array(classLabels)+2)*35
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array([105., 105.,  35.,  35., 105.])
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array([105, 105,  35,  35, 105])
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array([105, 105,  35,  35, 105]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array([105, 105,  35,  35, 105]),np.array([105, 105,  35,  35, 105]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array([105, 105,  35,  35, 105]),np.array([45, 45,  45,  45, 45]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:4,:]
+dl=dl[0:4]
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:6,:]
+dl=dl[0:6]
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=[0:5]
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+dd
+dl
+np.array(datMat[:,0])
+dd[:,1]
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]),np.array(datMat[:,1]),np.array([105, 105,  35,  35, 105]),np.array([45, 45,  45,  35, 105]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+np.array(datMat[:,0])
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+dd[:,1]
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(dd[:,1],dd[:,2],15*np.array(dl),15*np.array(dl))
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.array(datMat[:,0]).T,np.array(datMat[:,1]).T,np.array([105, 105,  35,  35, 105]),np.array([45, 45,  45,  35, 105]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+np.array(datMat[:,1]).T,
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0])).T,np.squeeze(np.array(datMat[:,1]).T),np.array([105, 105,  35,  35, 105]),np.array([45, 45,  45,  35, 105]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),np.array([105, 105,  35,  35, 105]),np.array([45, 45,  45,  35, 105]))
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),np.array(classLabels)*15,np.array(classLabels)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),np.array(classLabels+2)*15,np.array(classLabels+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+p.array(classLabels+2))*15,(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+p.array(classLabels))*15,(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*15,(np.array(classLabels)+2)*15)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+#%%
+from machinelearninginaction.Ch02 import kNN
+import os
+dd,dl=kNN.file2matrix(os.getcwd()+r'\machinelearninginaction\Ch02'+r'\datingTestSet2.txt')
+fig=plt.figure()
+ax=fig.add_subplot(111)
+dd=dd[0:5,:]
+dl=dl[0:5]
+ax.scatter(dd[:,1],dd[:,2],25*np.array(dl),25*np.array(dl))
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+# plt.scatter(datMat[:,0], datMat[:,1], color='red')
+# plt.show()
+# plt.scatter(x, y, color='red')
+dataMat
+datMat
+#%%
+datMat[:,0].tolist()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+A=[1,2,3,4,5]
+A[3>1]
+#%%
+A=[1,2,3,4,5]
+A[4>1]
+#%%
+A=[1,2,3,4,5]
+A[1<4]
+#%%
+A=[1,2,3,4,5]
+A[2<4]
+#%%
+retArray = ones((1,5))
+#%%
+retArray = np.ones((1,5))
+#%%
+retArray = np.ones((1,5))
+retArray
+#%%
+retArray = np.arrar([[1,2,3,4,5]])
+retArray
+#%%
+retArray = np.array([[1,2,3,4,5]])
+retArray
+#%%
+retArray = np.array([[1,2,3,4,5]])
+retArray[4>3]
+#%%
+retArray = np.array([[1,2,3,4,5]])
+retArray[4>1]
+#%%
+retArray = np.array([[1,2,3,4,5]])
+retArray[4>1]=-1
+#%%
+retArray = np.array([[1,2,3,4,5]])
+retArray[4>1]=-1
+retArray
+#%%
+retArray = np.array([[1,2,3,4,5]])
+retArray[2>3]=-1
+retArray
+#%%
+from machinelearninginaction.Ch07 import adaboost
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+a=2
+print("---------",a)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+a=[1,2,3,4,5,6]
+a>3
+#%%
+a=np.array([1,2,3,4,5,6])
+a>3
+#%%
+a=np.array([1,4,3,6,5,2])
+a>3
+a[a>3]
+#%%
+a=np.array([1,4,3,6,5,2])
+a>3
+a[a>3]=-1
+#%%
+a=np.array([1,4,3,6,5,2])
+a>3
+a[a>3]=-1
+a
+#%%
+retArray = np.array([[1,2,3,4,5]])
+indata = np.array([[1,2,3,4,5]])
+retArray[indata>3]=-1
+retArray
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+# D=np.mat(np.ones((5,1))/5)
+# adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*45,(np.array(classLabels)+2)*45)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(3+np.array(classLabels))*45,(np.array(classLabels)+3)*45)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(3+np.array(classLabels))*45,(np.array(classLabels)+3)*45)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+errArr
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+retArray = np.array([[1,2,3,4,5]])
+indata = np.array([[1,2,3,4,5]])
+retArray[indata>3]=-1
+retArray
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+logging.basicConfig(level=logging.DEBUG,
+                    filename='f:\\adebug.txt',
+                    filemode='w')
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename='f:\\adebug.txt',
+                    filemode='w')
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+get_ipython().run_line_magic('logoff', '')
+get_ipython().run_line_magic('logstart', '')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename='f:\\adebug.txt',
+                    filemode='w')
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+get_ipython().run_line_magic('logstart', '-o')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename='f:\\adebug.txt',
+                    filemode='w')
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+get_ipython().run_line_magic('logstart', '-o')
+#%%
+from machinelearninginaction.Ch07 import adaboost
+imp.reload(adaboost)
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    filename='f:\\adebug.txt',
+                    filemode='w')
+datMat,classLabels=adaboost.loadSimpData()
+adaboost.loadSimpData()
+# fig=plt.figure()
+# ax=fig.add_subplot(111)
+# ax.scatter(np.squeeze(np.array(datMat[:,0]).T).T,np.squeeze(np.array(datMat[:,1]).T),(2+np.array(classLabels))*25,(np.array(classLabels)+2)*25)
+D=np.mat(np.ones((5,1))/5)
+adaboost.buildStump(datMat,classLabels,D)
+get_ipython().run_line_magic('logstate', '')
+get_ipython().run_line_magic('logoff', '')
