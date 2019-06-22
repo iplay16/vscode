@@ -12,7 +12,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "f:/temp/${fileBasenameNoExtension}.exe",
+            "program": "f:/temp/a.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

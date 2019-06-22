@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "F:\\pythoncgi"
+		},
+		{
+			"path": "leetcode"
+		},
+		{
+			"path": "G:\\软件\\git-0.01"
+		},
+		{
+			"path": "E:\\coderead\\httpd-2.4.39"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"stdio.h": "c",
+			"types.h": "c",
+			"stdlib.h": "c",
+			"errno.h": "c",
+			"cache.h": "c",
+			"fcntl.h": "c",
+			"zlib.h": "c",
+			"type_traits": "cpp",
+			"ap_listen.h": "c",
+			"http_connection.h": "c"
+		}
+	}
+}

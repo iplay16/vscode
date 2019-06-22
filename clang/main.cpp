@@ -1,18 +1,21 @@
-#include <iostream>
-#include<stdlib.h>
 #include<stdio.h>
-using namespace std;
-typedef struct node{
-    int val;
-    struct node *left;
-    struct node *right;
-}node,*tree;
 
-int main(int, char**) {
-    node *p=(node*)malloc(sizeof(node));
-    void *vp;
-    p->val=1;
-    vp=p;
-    printf("%d",((node*)vp)->val);
-exit(0);
+int main(){
+    const char *s=" 1 2 3 4 5 6 7 ";
+    int wordnum=0;
+    const char *p=s;
+    int newwordflag=1;
+    for(;*p!='\0';p++){
+        if(*p==' '){
+            newwordflag=1;
+            continue;
+        }
+        if(*p!=' '&&newwordflag==1){
+            wordnum+=1;
+            newwordflag=0;
+            continue;
+        }
+    }
+    printf("%d",wordnum);
+    getchar();
 }
