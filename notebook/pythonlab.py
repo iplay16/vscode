@@ -32,9 +32,5 @@ for x in a:
 
 
 #%%
-a=1 
-b=2
-a=3 if b>5 else 4
-while((a=2)==2):
-
-	
+c=(34>>4)
+print(c)
