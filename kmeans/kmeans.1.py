@@ -24,15 +24,15 @@ def kmeans(datamatrix,k):
     
     #0 is unchanged
     flag=1
+    clusterv=[-1]*m
+    distancematrix=np.zeros([m,k])
     while(flag!=0):
         ####build distancematrix
-        distancematrix=np.zeros([m,k])
         for i,line in enumerate(meanmatrix):
             tmp=(((datamatrix-line)**2).sum(axis=1))**(1/2)
             distancematrix[:,i]=tmp
 
         #build clusterv
-        clusterv=[-1]*m
         flag=buildclusterv(distancematrix,clusterv)
 
         #first,clean meanmatrix

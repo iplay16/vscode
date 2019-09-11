@@ -49,11 +49,28 @@ a[:,0]=b
 print(a)
 
 #%%
+import numpy as np 
 datamatrix=np.array([[1,2,3],[3,4,5]])
-for i in range(2):
-	for j in range(3):
-		datamatrix[i,j]=0
-print(datamatrix)
+c=datamatrix/np.asarray([2,3]).reshape(2,1)
+print(c)
 #%%
-clusternumberv=np.zeros(3,float)
-print(clusternumberv)
+a = np.arange(9, dtype = np.float_).reshape(3,3)  
+print ('第一个数组：')
+print (a)
+print ('\n')
+print ('第二个数组：')
+b = np.array([10,10,10])  
+print (b)
+print ('\n')
+print ('两个数组相加：')
+print (np.add(a,b))
+print ('\n')
+print ('两个数组相减：')
+print (np.subtract(a,b))
+print ('\n')
+print ('两个数组相乘：')
+print (np.multiply(a,b))
+print ('\n')
+print ('两个数组相除：')
+print (np.divide(a,b))
+print(a)
