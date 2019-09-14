@@ -75,7 +75,7 @@ def loadDataSet(fileName):      #general function to parse tab -delimited floats
     return np.asarray(dataMat,dtype=float)
 
 if __name__=='__main__':
-    datamatrix=loadDataSet('kmeans/testSet.txt')
+    datamatrix=loadDataSet('ML/testSet.txt')
     x=datamatrix[:,0]
     y=datamatrix[:,1]
     plt.plot(x,y,"ob")

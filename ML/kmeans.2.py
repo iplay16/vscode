@@ -3,6 +3,12 @@
 #       by linxiaowei
 #       2019/09/10    
 # 
+# there are several important matrixs or vectors
+# meanmatrix:the matrix of meanpoint
+# clusterv:a vector that contain the n'th point that assign to the certain meanpoint 
+#
+#
+#
 ##############################
 import sys
 import random
@@ -32,7 +38,7 @@ def kmeans(datamatrix,k):
         flag=countclusterv(datamatrix,meanmatrix,clusterv)
         #count mean
         meanmatrix=countmean(datamatrix,clusterv,meanmatrix)
-    return meanmatrix
+    return meanmatrix,clusterv
 
 def distance(av,bv):
     return (np.sum((av-bv)**2))**(1/2)
@@ -79,11 +85,19 @@ def loadDataSet(fileName):      #general function to parse tab -delimited floats
     return np.asarray(dataMat,dtype=float)
 
 if __name__=='__main__':
-    datamatrix=loadDataSet('kmeans/testSet.txt')
-    x=datamatrix[:,0]
-    y=datamatrix[:,1]
-    plt.plot(x,y,"ob")
-    meanmatrix=kmeans(datamatrix,4)
+    datamatrix=loadDataSet('ML/testSet.txt')
+    meanmatrix,clusterv=kmeans(datamatrix,4)
+    # x=datamatrix[:,0]
+    # y=datamatrix[:,1]
+    for m in range(len(clusterv)):
+        if clusterv[m]==0:
+            plt.plot(datamatrix[m:,0],datamatrix[m:,1],"om")
+        if clusterv[m]==1:
+            plt.plot(datamatrix[m:,0],datamatrix[m:,1],"ob")
+        if clusterv[m]==2:
+            plt.plot(datamatrix[m:,0],datamatrix[m:,1],"oy")
+        if clusterv[m]==3:
+            plt.plot(datamatrix[m:,0],datamatrix[m:,1],"og")
     print(meanmatrix)
     x=meanmatrix[:,0]
     y=meanmatrix[:,1]
