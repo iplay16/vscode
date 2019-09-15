@@ -1,0 +1,1 @@
+A=xlsread('jumpdata.xlsx')
