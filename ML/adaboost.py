@@ -1,5 +1,5 @@
 
-#good article https://www.cnblogs.com/ScorpioLu/p/8295990.html
+#link https://www.cnblogs.com/ScorpioLu/p/8295990.html
 from math import log,exp
 import numpy as np
 def alphaweight(err):

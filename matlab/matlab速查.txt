@@ -1,0 +1,154 @@
+### 矩阵
+#### 数值
+Inf:无穷大
+pi:π
+exp():e的n次方
+
+#### 矩阵运算：
+inv(A):矩阵装置
+det(A):行列式
+rank(A):矩阵的秩
+[V,D] = eig(A):特征值和滕州向量
+trace(A):迹
+rref(A):变换阶梯化
+svd(A):奇异值分解
+cond(A):条件数
+
+#### 矩阵构造
+ones(3,4):三行四列矩阵全1矩阵
+reshape(1:12,3,4)
+
+diag(A):对角线元素构成的向量
+triu(A,k):生成上三角
+tril(A,k):生成下三角
+
+矩阵分解与变换:
+[L,U]=lu(A):L*U=A
+R=cholesky(A):R*(R的转置)=A
+[Q,R]qr(A):分解成正交矩阵和上三角矩阵的积
+[USV]=svd(A):表示U乘S乘(V的转置)
+rref(A):A的最简阶梯型
+A\b:方程组A的一个特解
+orth(A):正交阵
+
+
+
+#### 人机交互
+input('提示信息')
+disp(输出项)
+pause:暂停
+
+#### 绘图
+plot(x1,y1)
+scatter(X,y1,size,color)
+title()
+xlabel()
+ylable()
+axis():对坐标轴范围控制
+hold on:保留原图
+subplot:子图
+plot3:三维曲线
+surf()表面涂色
+mesh():网格
+
+#### 数值运算
+factor(S):多项式或整数的质因数分解
+numden:同分
+horner:嵌套
+
+ #### 微积分
+ limit:极限
+ diff:求导
+ int:积分
+ 特殊积分:
+    trapz
+    quad
+    quadgk
+
+
+ 方程求根
+ solve('F1','F2','var1','var2'):方程组的根
+ root:多项式方程的根
+ fsolve:非线性方程的根
+ dsolve:微分方程的根
+
+
+
+ ### 数理统计
+ #### 常用概率密度函数
+ y1=pdf('exp',2.3,1):λ等于1的指数分布x=2.3处
+ y2=pdf('norm',4.5,3,2):N(3,2^2) x=4.5处
+ y3=pdf('poiss',4,2) :λ等于1的泊松分布x=4处
+ y4=pdf('t',4,2):t分布
+ y5=pdf('unif',1.5,1,3):均匀分布[1,3]之间的概率密度都相同
+
+####分布函数的计算
+
+Y=cdf('unif',1.5,1,3)
+Y=cdf('norm',4.5,3,2)
+
+#### 数字特征的计算
+max:最大元素值
+min:最小元素值
+mean:数学期望
+median:中位数
+sum:求和
+sort:排序
+
+忽略NAN的函数:
+nanmax
+nanmin
+nanmean
+nanmedian
+
+var(X)样本方差前置因子1/(n-1)
+var(X,1)样本简单方差前置因子1/n
+var(X,w):以w为权系数的方差
+std(X):标准差前置因子1/(n-1)
+std(X,1):前置因子1/n
+
+skewness:偏斜度
+kurtosis:峰度
+
+cov(X,Y):协方差矩阵
+corrcoef(X,Y):相关系数矩阵
+
+[M,V]=binostat(n,p):二项分布的数学期望与方差
+[M,V]=chi2stat(n):自由度为n的卡方分布的期望与方差
+[M,V]=expstat(λ):参数为1/λ的指数分布的期望与方差
+[M,V]=possistat(λ)参数为λ的泊松分布的期望与方差
+
+####分位数的计算
+chi2inv(1-α,n):自由度为n的卡方分布的α分位数
+norminv(1-α,μ,σ):正太分布的α分位数
+tinv(1-α,n):自由度为n的t分布的α分位数
+
+#### 随机矩阵
+binornd(100,0.48,[3,5])
+poissrnd(3,[3,4])
+
+
+#### sum求和
+a=sum(x);%列求和
+a=sum(x,2);%行求和
+a=sum(x(:));%矩阵求和
+
+#### bsxfun
+A=[1,2,3;4,5,6];
+bsxfun(@plus,A,[1,1,1])
+ans =
+
+     2     3     4
+     5     6     7
+
+
+######length和size
+length返回行或者列的最大值
+
+
+####matlab按某一列排序，其他列不变办法
+b=sortrows(a,2)    %a 为要排序的矩阵。2表示按第几列进行排序，整数代表升序，负数代表降序。
+%将矩阵a按照第2列的升序排列，其他列不会作升序排列，而是将跟随着第2列 的变化，保持一一对应。
+
+b=sortrows(a,-3)
+%将矩阵a按照第3列的降序排列，其他列将跟随着第3列 的变化，保持一一对应。
